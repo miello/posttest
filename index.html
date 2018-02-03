@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+ <head>
+<title>Naniyori</title>
+<link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
+  <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <script src="w.js"></script>
+  <script src="socdata.js"></script>
+  <script src="mathdata.js"></script>
+  <script src="thaidata.js"></script>
+<link rel="stylesheet" href="styleN.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+     
+
+  </head>
+<body onload="loadd()">
+  <div id="scorepanel" class="scorep">
+  <div class="scoredis" >
+    <button class="sclose"  onclick="Close()">X</button>
+    คะแนนที่ได้
+    <p id="scoredisp"></p>
+  </div>
+  </div>
+  <div class="rotate">กรุณาหมุนหน้าจอ</div>
+  <button class="nextbt" id="sent" onclick="check(0)">ตรวจคำตอบ</button>
+  <p id="time" class="timecountdown"></p>
+
+
+  <div class="subject">
+    <button class="subjbtn" onclick="csubj(0,1)" id="sbtn0">คณิตศาสตร์</button>
+    <button class="subjbtn" id="sbtn1" onclick="csubj(1,1)">สังคมศึกษา</button>
+    <button class="subjbtn" id="sbtn2" onclick="csubj(2,1)">ภาษาไทย</button>
+  </div>
+  <div id="no"></div>
+  <div class="typ">
+    <img class="pic" id="questionpic" src="http://www.mx7.com/i/06e/BOcVIq.jpg" >
+    <p id=question style="display:inline">กุ้งกิ้งกุ้งกิ้ง~ มีกระดิ่งทั้งหมดกี่ลูก</p><br>
+    
+    <br>
+    <form action="" id="choice">
+      <input type="radio" name="type"id="cbt1"  onclick = "choose(1)"><p id="c1" style="display:inline">df</p><br>
+  <input type="radio" name="type"id="cbt2"  onclick = "choose(2)"><p id="c2" style="display:inline"></p><br>
+  <input type="radio" name="type" id="cbt3" onclick = "choose(3)"><p id="c3" style="display:inline"></p><br>
+  <input type="radio" name="type" id="cbt4" onclick = "choose(4)"><p id="c4" style="display:inline"></p><br><br>
+    </form>
+    <p style="display:none" id="yourans">คำตอบของคุณคือ asdf</p>
+    
+    <p style="display:none" id="reason">คำตอบที่ถูกต้องคือ 1 เพราะอยากตอบย่ะะะ</p>
+    <img class="pic" id="anspic" style="display:none" src="http://www.mx7.com/i/06e/BOcVIq.jpg" >
+  </div>
+  <button class="nextbt" onclick = "next()" id="nextbtn">ข้อถัดไป ></button>
+  <button class="prevbt" onclick = "prev()" id="prevbtn">< ข้อก่อนหน้า </button>
+</body>
+</html>

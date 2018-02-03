@@ -1,0 +1,139 @@
+@charset "UTF-8";
+
+
+html {
+ 
+  font-size: 100%;
+}
+
+body {
+  background-image: url("image/bg.jpg");
+  margin: 0;
+  padding: 0; }
+
+*{   -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+ font-family:"Sukhumvit Set","Prompt", sans-serif;}
+.nextbt{
+  margin : 3px 0 0 0;
+  background-color:rgba(255, 255, 255, 0.8);
+  border-color: Transparent;
+  font-size:20px;
+  position :absolute;
+  right:20px;
+}
+.prevbt{
+  margin : 3px 0 0 0;
+  background-color:rgba(255, 255, 255, 0.8);
+  border-color: Transparent;
+  font-size:20px;
+  position :absolute;
+  left:20px;
+}
+.subjbtn{
+    width : 33%;
+    font-size:30px;
+    text-align:center;
+    background-color: Transparent;
+    border:Transparent;    
+    float:left;
+}
+.subject{
+    height :45px; 
+    background-color:rgba(255, 255, 255, 0.8);
+}
+.timecountdown{  padding:0% 2% 0% 2%;
+  margin:10px 30vw 10px 30vw;
+	text-align: center;
+  font-weight:300;
+  font-size:30px;
+  background-color:rgba(255, 255, 255, 0.8);}
+
+.typ{
+  padding:1% 4% 1% 4%;
+  margin:10vh 20px 20px 20px;
+  text-align:left;
+  font-size:20px;
+  background-color:rgba(255, 255, 255, 0.8);
+
+}
+.sclose{
+  position :absolute;
+  right:0px;
+  top:0px;
+  background-color:Transparent;
+  border-color:Transparent;
+  
+}
+.scorep{
+  position :absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  display:none;
+  background-color:rgba(0,0,0,0.5);
+  z-index:2;
+  
+}
+.rotate{
+   position :absolute;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   display:none;
+  color:white;
+  text-align:center;
+  vertical-align: middle;
+  font-size:40px;
+  background-color:black;
+  z-index:2; 
+}
+.scoredis{
+  font-size:40px;
+  position : absolute;
+  padding : 5% 0 0 0;
+  margin :10vh 0 0 10vw;
+  width : 80vw;
+  height :70vh;
+  background-color:white;
+  text-align : center;  
+
+}
+img{
+    max-width: 100%;
+    height: auto;
+
+}
+.pic{
+  width :auto;
+  height : auto;
+  
+}
+
+@media screen and (max-width : 500px ){
+.inputa{
+    width: 70px;
+}
+  .rotate{
+    display:block;
+  }
+.v{
+	
+  margin-top:10px;
+}
+.typ{
+	padding:0% 8% 0% 8%;
+     font-size:15px;
+	}
+}
