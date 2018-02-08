@@ -1,55 +1,65 @@
 <!DOCTYPE html>
 <html>
- <head>
-<title>Naniyori</title>
+<head>
+<script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript" src="https://getbootstrap.com/dist/js/bootstrap.js"></script>
+<link type="text/css" rel="stylesheet" href="https://getbootstrap.com/dist/css/bootstrap.css"/>
+<title>Pretest</title>
 <link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
-  <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
   <script src="w.js"></script>
-  <script src="socdata.js"></script>
-  <script src="mathdata.js"></script>
-  <script src="thaidata.js"></script>
+  <script src="data.js"></script>
 <link rel="stylesheet" href="styleN.css">
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-     
-
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
   </head>
-<body onload="loadd()">
-  <div id="scorepanel" class="scorep">
-  <div class="scoredis" >
-    <button class="sclose"  onclick="Close()">X</button>
-    คะแนนที่ได้
-    <p id="scoredisp"></p>
-  </div>
-  </div>
-  <div class="rotate">กรุณาหมุนหน้าจอ</div>
-  <button class="nextbt" id="sent" onclick="check(0)">ตรวจคำตอบ</button>
+<body>
+  <br/>
+  <button id="start" onclick='start()' class="btn btn-primary btn-lg btn-block">เริ่มทำแบบทดสอบ</button>
   <p id="time" class="timecountdown"></p>
-
-
-  <div class="subject">
-    <button class="subjbtn" onclick="csubj(0,1)" id="sbtn0">คณิตศาสตร์</button>
-    <button class="subjbtn" id="sbtn1" onclick="csubj(1,1)">สังคมศึกษา</button>
-    <button class="subjbtn" id="sbtn2" onclick="csubj(2,1)">ภาษาไทย</button>
+  <div class="score"><p id="score"></p></div>
+  <div class="question" id="q1">
+    <label id="question"></label>
+    </div>
+  <div>
+      <label class="col-md-4"></label>
+      <label class="col-md-4 text-center">  
+    <button id="close" onclick="close()" class="btn btn-primary btn-lg btn-block" hidden="">กลับสู่บทเรียน</button>
+    </label>
   </div>
-  <div id="no"></div>
-  <div class="typ">
-    <img class="pic" id="questionpic" src="http://www.mx7.com/i/06e/BOcVIq.jpg" >
-    <p id=question style="display:inline">กุ้งกิ้งกุ้งกิ้ง~ มีกระดิ่งทั้งหมดกี่ลูก</p><br>
-    
-    <br>
-    <form action="" id="choice">
-      <input type="radio" name="type"id="cbt1"  onclick = "choose(1)"><p id="c1" style="display:inline">df</p><br>
-  <input type="radio" name="type"id="cbt2"  onclick = "choose(2)"><p id="c2" style="display:inline"></p><br>
-  <input type="radio" name="type" id="cbt3" onclick = "choose(3)"><p id="c3" style="display:inline"></p><br>
-  <input type="radio" name="type" id="cbt4" onclick = "choose(4)"><p id="c4" style="display:inline"></p><br><br>
-    </form>
-    <p style="display:none" id="yourans">คำตอบของคุณคือ asdf</p>
-    
-    <p style="display:none" id="reason">คำตอบที่ถูกต้องคือ 1 เพราะอยากตอบย่ะะะ</p>
-    <img class="pic" id="anspic" style="display:none" src="http://www.mx7.com/i/06e/BOcVIq.jpg" >
-  </div>
-  <button class="nextbt" onclick = "next()" id="nextbtn">ข้อถัดไป ></button>
-  <button class="prevbt" onclick = "prev()" id="prevbtn">< ข้อก่อนหน้า </button>
+  <div class="radio">
+    <label class="col-md-4"></label>
+    <label class="col-sm-4 text-center">
+    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" onclick='st(1)' hidden=""><p id="c1" class="c"></p>
+  </label>
+</div>
+<div class="radio">
+  <label class="col-md-4"></label>
+  <label class="col-md-4 text-center">
+    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" onclick='st(2)' hidden=""><p id="c2" class="c"></p>
+  </label>
+</div>
+<div class="radio">
+  <label class="col-md-4"></label>
+  <label class="col-md-4  text-center">
+    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" onclick='st(3)' hidden=""><p id="c3" class="c"></p>
+  </label>
+</div>
+<div class="radio">
+  <label class="col-md-4"></label>
+  <label class="col-md-4 text-center">
+    <input type="radio" name="optionsRadios"id="optionsRadios4" value="option4" onclick='st(4)' hidden=""><p id="c4" class="c"></p>
+  </label>
+</div>
+  <div class="row">
+    <label class="col-md-6 text-right">
+      <button id="prev" type="button" onclick='cq(-1)' class="btn" hidden="">ข้อก่อนหน้า</button>
+       </label>
+    <div class="col-md-6">
+  <button id="next" type="button" onclick='cq(1)' class="btn btn-secondary " hidden="">ข้อถัดไป</button>
+      <button id="submit" type="button" onclick='check1()' class="btn btn-success" hidden="">ส่งคำตอบ</button> 
+   </div>
+    <button id="submit2" onclick='check2()' class="btn btn-secondary btn-lg btn-block" hidden="">ส่งคำตอบ</button>
+    </div>
+  
 </body>
 </html>
