@@ -24,9 +24,10 @@
   <div>
       <label class="col-md-4"></label>
       <label class="col-md-4 text-center">  
-    <button id="close" onclick="closed()" class="btn btn-primary btn-lg btn-block" hidden="">กลับสู่บทเรียน</button>
-    </label>
-  </div>
+        <a id="close" href="/pre.pdf" class="btn btn-primary" target="_blank" role="button" hidden="">เฉลยแบบทดสอบก่อนเรียน</a>
+        <a id="close2" href="/post.pdf" class="btn btn-primary" role="button" hidden="">เฉลยแบบทดสอบหลังเรียน</a>
+  </label>
+    </div>
   <div class="radio">
     <label class="col-md-4"></label>
     <label class="col-sm-4 text-center">
@@ -58,7 +59,7 @@
        </label>
     <div class="col-md-6">
   <button id="next" type="button" onclick='cq(1)' class="btn btn-secondary " hidden="">ข้อถัดไป</button>
-      <button id="submit" type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal" hidden="">ส่งคำตอบ</button>
+     <button id="submit" type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal" hidden="">ส่งคำตอบ</button>
  <div class="modal fade" id="myModal">
   <div class="modal-dialog">
     <div class="modal-content">
