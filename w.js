@@ -8,6 +8,7 @@ for(i=0;i<10;i++){
   a[i] = 0;
 }
 var now=0;
+var time;
 
 q[0]	=	"1. การปฏิรูปการปกครองครั้งสำคัญที่สุดในสมัยอยุธยาเกิดขึ้นในสมัยพระมหากษัตริย์พระองค์ใด";
 q[1]	=	"2. ข้อใดแสดงให้เห็นถึงจุดอ่อนของการปฏิรูปการปกครองในสมัยพระบรมไตรโลกนาถมากที่สุด";
@@ -109,7 +110,7 @@ function di2(){
 function time(){
   // Set the date we're counting down to
 var countDownDate = new Date().getTime();
-  countDownDate+=(60*60*1000/6);
+  countDownDate+=(60*60*1000/3);
   countDownDate+=6;
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -204,7 +205,6 @@ function check1(){
 
 
 function check2(){
-  di();
   var score=0;
   for(i=0;i<10;i++){
     if(a[i]==s[i])score++;
@@ -227,6 +227,28 @@ function start(){
   runqc(now);
 }
 
-function close(){
-  setInterval(window.close(), 5000);
+function settime(){
+    setTimeout(check1, 5000);
+  setTimeout(function(){document.getElementById("load").hidden="hidden"; } , 5000);
 }
+function settime2(){
+    setTimeout(check2, 5000);
+  setTimeout(function(){document.getElementById("load").hidden="hidden"; } , 5000);
+}
+
+function loading1(){
+  document.getElementById("load").hidden="";
+  settime();
+  di2();
+}
+
+function loading2(){
+  document.getElementById("load").hidden="";
+  settime2();
+  di2();
+}
+
+function closed(){
+  close();
+}
+
